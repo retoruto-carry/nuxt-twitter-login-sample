@@ -1,12 +1,6 @@
 <template>
   <div>
     <client-only>
-      <template v-if="$firebase.currentUser">
-        <img :src="$firebase.currentUser.photoURL" />
-        <p>
-          {{ $firebase.currentUser.displayName }}
-        </p>
-      </template>
       <button v-if="!$firebase.currentUser" @click="signIn">サインイン</button>
       <button v-else @click="signOut">サインアウト</button>
     </client-only>
