@@ -14,13 +14,14 @@ import { setUser } from '~/firebase/db'
 
 export default {
   methods: {
-    signIn: async () => {
+    async signIn() {
       const provider = new firebase.auth.TwitterAuthProvider()
       await firebase
         .auth()
         .signInWithPopup(provider)
         .then((res) => {
           setUser(res.user)
+          this.$router.push('/secret')
         })
     },
     signOut: async () => {

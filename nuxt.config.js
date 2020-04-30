@@ -51,6 +51,11 @@ export default {
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv'
   ],
+
+  router: {
+    middleware: ['auth']
+  },
+
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
